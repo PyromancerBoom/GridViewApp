@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+// Main Code
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
@@ -21,15 +22,10 @@ class MyApp extends StatelessWidget {
 }
 
 // Grid View Widget
-
 class GridV extends StatelessWidget {
   const GridV({Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context) {
-    final someimages = [
-      ["assets/images/image.jpg"],
-      ['assets/images/broccoli.png']
-    ];
+  Widget build(BuildContext context){
     return GridView.count(
       primary: false,
       padding: const EdgeInsets.all(20),
@@ -37,33 +33,34 @@ class GridV extends StatelessWidget {
       mainAxisSpacing: 10,
       crossAxisCount: 2,
       children: <Widget>[
-        ...someimages.map(
-            (i) => Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Material(
-                  child: Image.asset(
-                    i.first,
-                    fit: BoxFit.fitWidth,
-                  ),
-                )
-              ]
-            )
-        ),
+        // First four boxes using Decoration
+        // Next four using Images.asset
         Container( //First
           padding: const EdgeInsets.all(8),
-          child: const Text("He'd have you all unravel at the"),
-          color: Colors.teal[100],
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: Image.asset('assets/images/image.jpg').image,
+              )
+          ),
         ),
         Container( // Second
           padding: const EdgeInsets.all(8),
-          child: const Text('Heed not the rabble'),
-          color: Colors.teal[200],
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: Image.asset('assets/images/image.jpg').image,
+              )
+          ),
         ),
         Container( // Third
           padding: const EdgeInsets.all(8),
-          child: const Text('Sound of screams but the'),
-          color: Colors.teal[300],
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: Image.asset('assets/images/image.jpg').image,
+                )
+            ),
         ),
         Container( // Fourth
           padding: const EdgeInsets.all(8),
@@ -81,27 +78,17 @@ class GridV extends StatelessWidget {
         ),
         Container(
           padding: const EdgeInsets.all(8),
-          child: const Text('Revolution, they...'),
+          child: Image.asset('assets/images/image.jpg'),
           color: Colors.teal[600],
         ),
         Container(
           padding: const EdgeInsets.all(8),
-          child: const Text('Revolution, they...'),
+          child: Image.asset('assets/images/image.jpg'),
           color: Colors.teal[600],
         ),
         Container(
           padding: const EdgeInsets.all(8),
-          child: const Text('Revolution, they...'),
-          color: Colors.teal[600],
-        ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          child: const Text('Revolution, they...'),
-          color: Colors.teal[600],
-        ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          child: const Text('Revolution, they...'),
+          child: Image.asset('assets/images/image.jpg'),
           color: Colors.teal[600],
         ),
       ],
