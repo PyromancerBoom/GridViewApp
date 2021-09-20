@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
         ),
       );
   }
-
 }
 
 // Grid View Widget
@@ -27,6 +26,10 @@ class GridV extends StatelessWidget {
   const GridV({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final someimages = [
+      ["assets/images/image.jpg"],
+      ['assets/images/broccoli.png']
+    ];
     return GridView.count(
       primary: false,
       padding: const EdgeInsets.all(20),
@@ -34,6 +37,19 @@ class GridV extends StatelessWidget {
       mainAxisSpacing: 10,
       crossAxisCount: 2,
       children: <Widget>[
+        ...someimages.map(
+            (i) => Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Material(
+                  child: Image.asset(
+                    i.first,
+                    fit: BoxFit.fitWidth,
+                  ),
+                )
+              ]
+            )
+        ),
         Container( //First
           padding: const EdgeInsets.all(8),
           child: const Text("He'd have you all unravel at the"),
@@ -54,13 +70,13 @@ class GridV extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.asset('D:/vintage_games/assets/broccoli.png').image,
+              image: Image.asset('assets/images/image.jpg').image,
             )
           ),
         ),
         Container(
           padding: const EdgeInsets.all(8),
-          child: Image.asset('D:/vintage_games/assets/broccoli.png'),
+          child: Image.asset('assets/images/image.jpg'),
           color: Colors.teal[500],
         ),
         Container(
