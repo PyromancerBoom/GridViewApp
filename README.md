@@ -5,7 +5,7 @@ This is an isolated app in flutter to implement the GridView widget of flutter.
 
 ## Usage
 
-Run main.dart in an android emulator or install the apk file.
+Run main.dart in an android emulator.
 
 ## Contributing
 I welcome and encourage all pull requests. 
