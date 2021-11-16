@@ -1,19 +1,22 @@
+// The following code was added in "pubspec.yaml" for registration of assets to include images in the app:
+// flutter:
+//   assets:
+//     - assets/images/
+// assets/images/ is the directory inside the project folder where images are to be put
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-// Main Code
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      title: 'Flutter Skill Builder',
+      title: 'Flutter: Images in Gridview',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Bruce\'s Retro Games"),
+          title: const Text("Some images in flutter"),
         ),
         body: const Center(
-          // child: Text(""),
           child: GridV(),
         ),
         ),
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Grid View Widget
+// Gridview Widget
 class GridV extends StatelessWidget {
   const GridV({Key? key}) : super(key: key);
   @override
@@ -33,14 +36,12 @@ class GridV extends StatelessWidget {
       mainAxisSpacing: 10,
       crossAxisCount: 2,
       children: <Widget>[
-        // First four boxes using Decoration
-        // Next four using Images.asset
         Container( //First
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: Image.asset('assets/images/image.jpg').image,
+                image: Image.asset('assets/images/image2.jpg').image,
               )
           ),
         ),
@@ -49,7 +50,7 @@ class GridV extends StatelessWidget {
           decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: Image.asset('assets/images/image.jpg').image,
+                image: Image.asset('assets/images/hogwarts.jpg').image,
               )
           ),
         ),
@@ -58,7 +59,7 @@ class GridV extends StatelessWidget {
             decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: Image.asset('assets/images/image.jpg').image,
+                  image: Image.asset('assets/images/image3.jpg').image,
                 )
             ),
         ),
@@ -67,29 +68,45 @@ class GridV extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.asset('assets/images/image.jpg').image,
+              image: Image.asset('assets/images/image1.jpg').image,
             )
           ),
         ),
-        Container(
+        Container( // Fifth
           padding: const EdgeInsets.all(8),
-          child: Image.asset('assets/images/image.jpg'),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: Image.asset('assets/images/image.jpg').image,
+              )
+          ),
+        ),
+
+        // The code below is if we want the images with exact ratio along with background color
+        Container( // Sixth
+          padding: const EdgeInsets.all(8),
+          child: Image.asset('assets/images/image1.jpg'),
           color: Colors.teal[500],
         ),
-        Container(
+        Container( // Seventh
           padding: const EdgeInsets.all(8),
-          child: Image.asset('assets/images/image.jpg'),
-          color: Colors.teal[600],
+          child: Image.asset('assets/images/image2.jpg'),
+          color: Colors.red[600],
         ),
-        Container(
+        Container( // Eighth
           padding: const EdgeInsets.all(8),
-          child: Image.asset('assets/images/image.jpg'),
-          color: Colors.teal[600],
+          child: Image.asset('assets/images/image3.jpg'),
+          color: Colors.blue[600],
         ),
-        Container(
+        Container( // Ninth
+          padding: const EdgeInsets.all(8),
+          child: Image.asset('assets/images/hogwarts.jpg'),
+          color: Colors.yellow[600],
+        ),
+        Container( //Tenth
           padding: const EdgeInsets.all(8),
           child: Image.asset('assets/images/image.jpg'),
-          color: Colors.teal[600],
+          color: Colors.purple[600],
         ),
       ],
     );
