@@ -1,4 +1,4 @@
-#Gridview App 
+# Gridview App 
 This is an isolated app in flutter to implement the GridView widget of flutter.
 
 ![Alt Text](Animation.gif )
